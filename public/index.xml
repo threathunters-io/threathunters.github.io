@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>threathunter.io on Threathunters.io</title>
+    <link>http://localhost:60991/</link>
+    <description>Recent content in threathunter.io on Threathunters.io</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:60991/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New Post</title>
+      <link>http://localhost:60991/blog/posts/post2/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/blog/posts/post2/</guid>
+      <description>Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;There should be no margin above this first sentence.</description>
+    </item>
+    <item>
+      <title>New Release</title>
+      <link>http://localhost:60991/blog/releases/release2/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/blog/releases/release2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Old Post</title>
+      <link>http://localhost:60991/blog/posts/post1/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/blog/posts/post1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Old Release</title>
+      <link>http://localhost:60991/blog/releases/release1/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/blog/releases/release1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ETW Example Page</title>
+      <link>http://localhost:60991/docs/etw/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/docs/etw/example/</guid>
+      <description>Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;struct _KGATE { _DISPATCHER_HEADER Header; ULONG ProviderId; GUID ProviderGuid; }; There should be no margin above this first sentence.&#xA;Blockquotes should be a lighter gray with a border along the left side in the secondary color.</description>
+    </item>
+    <item>
+      <title>Internals Example Page</title>
+      <link>http://localhost:60991/docs/etw/internals/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/docs/etw/internals/example/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search Results</title>
+      <link>http://localhost:60991/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

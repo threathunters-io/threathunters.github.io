@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event Tracing for Windows on Threathunters.io</title>
+    <link>http://localhost:60991/docs/etw/</link>
+    <description>Recent content in Event Tracing for Windows on Threathunters.io</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:60991/docs/etw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ETW Example Page</title>
+      <link>http://localhost:60991/docs/etw/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:60991/docs/etw/example/</guid>
+      <description>Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;struct _KGATE { _DISPATCHER_HEADER Header; ULONG ProviderId; GUID ProviderGuid; }; There should be no margin above this first sentence.&#xA;Blockquotes should be a lighter gray with a border along the left side in the secondary color.</description>
+    </item>
+  </channel>
+</rss>
