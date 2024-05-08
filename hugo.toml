@@ -6,6 +6,9 @@ title                      = 'Threathunters.io'
 contentDir                 = "content/en"
 defaultContentLanguage     = "en"
 
+[outputs]
+  section = [ "HTML", "RSS", "print" ]
+
 # hugo module configuration
 
 [module]
@@ -22,6 +25,8 @@ defaultContentLanguage     = "en"
   # Google Custom Search Engine ID. Remove or comment out to disable search.
   # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
   offlineSearch = true
+  [params.print]
+    disable_toc = false
   [params.ui]
     showLightDarkModeMenu = true
     navbar_logo = true
