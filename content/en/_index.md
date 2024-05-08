@@ -5,7 +5,7 @@ title: threathunter.io
 {{< blocks/cover height="full" color="primary" >}}
 <div style="display: flex; align-items: center;">
     <div style="flex: 1; margin-right: 20px;">
-        <img src="images/logo_transparent.png" alt="Description of the image" width="80%">
+        <img src="images/logo_transparent.png" alt="Description of the image" style="max-width: 100%; height: auto;">
     </div>
     <div style="flex: 1; text-align: justify;">
         <h1>Community for Security Experts</h1>
