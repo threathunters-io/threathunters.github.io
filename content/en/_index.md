@@ -22,6 +22,7 @@ title: threathunter.io
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
+        <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
         <div class="card-shadow">    
           <h4 class="section-text-bold">Notes</h4>
           <p class="section-text">
@@ -30,6 +31,7 @@ title: threathunter.io
         </div>
       </div>
       <div class="col-lg-4">
+        <i class="fa-solid fa-gear" style="font-size: 50px; margin-right: 30px;"></i>
         <div class="card-shadow">
           <h4 class="section-text-bold">Tools</h4>
           <p class="section-text">
@@ -38,6 +40,7 @@ title: threathunter.io
         </div>
       </div>
       <div class="col-lg-4">
+        <i class="fa-brands fa-blogger" style="font-size: 50px; margin-right: 30px;"></i>
         <div class="card-shadow">
           <h4 class="section-text-bold">Blog</h4>
           <p class="section-text">
