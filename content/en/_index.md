@@ -18,16 +18,9 @@ title: threathunter.io
 
 
 {{% blocks/section color= "light" type="container" %}}
----
-title: threathunter.io
----
-
 <div class="body-container push-up">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 center-text" style="margin-bottom: 50px">
-        <h2 class="section-title">Benefits</h2>
-      </div>
       <div class="col-lg-4">
         <div class="card-shadow">    
           <h4 class="section-text-bold">Notes</h4>
