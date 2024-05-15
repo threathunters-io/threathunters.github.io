@@ -30,38 +30,25 @@ title: threathunter.io
       </div>
       <div class="col-lg-4">
         <div class="card-shadow">    
-          <h4 class="section-text-bold">Focus on Code,<br />Not Plumbing</h4>
+          <h4 class="section-text-bold">Notes</h4>
           <p class="section-text">
-            Fission lets developers run code functions easily, while automating
-            the menial work of configuring Kubernetes micro-services concepts
-            behind the scenes. Just write your code functions and Fission will
-            make it run on Kubernetes.
+           The 'Notes' section serves as a repository for technical write-ups and detailed descriptions of technical internals. These notes provide in-depth insights into complex systems, technologies, and processes, offering valuable knowledge and understanding for security professionals and enthusiasts alike. Whether you're a seasoned security expert seeking to deepen your understanding or a newcomer looking to explore the intricacies of cybersecurity, the 'Notes' section offers a wealth of information to enhance your expertise and broaden your perspective.
           </p>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-shadow">
-          <h4 class="section-text-bold">
-            Portable: Run your Lambda-like service, anywhere
-          </h4>
+          <h4 class="section-text-bold">Tools</h4>
           <p class="section-text">
-            Fission is open source under the Apache license. Fission works on a
-            Kubernetes cluster anywhere: on your laptop, in any public cloud, or
-            in a private data-center. Write your application with the
-            flexibility of deploying it anywhere.
+            The 'Tools' section serves as a public software repository, offering a diverse range of tools, libraries, and resources for security professionals and enthusiasts. This collection provides valuable resources to enhance cybersecurity practices and facilitate security research.
           </p>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card-shadow">
-          <h4 class="section-text-bold">
-            Extensible and<br />
-            Customizable
-          </h4>
+          <h4 class="section-text-bold">Blog</h4>
           <p class="section-text">
-            Fission is extensible to any programming language (Python, NodeJS,
-            Go, C#, PHP are supported today). It abstracts away containers by
-            default, but you can build your own containers if you need to.
+            The 'Blog' section features insightful articles, analysis, and commentary on various topics related to cybersecurity, incident response, threat hunting, and more. Stay informed about the latest trends, best practices, and emerging technologies in the ever-evolving field of cybersecurity through our engaging and informative blog posts.
           </p>
         </div>
       </div>
