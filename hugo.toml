@@ -28,7 +28,7 @@ defaultContentLanguage     = "en"
   [params.print]
     disable_toc = false
   [params.ui]
-    showLightDarkModeMenu = true
+    showLightDarkModeMenu = false
     navbar_logo = true
     sidebar_search_disable = false
     sidebar_menu_compact = true
