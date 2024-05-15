@@ -18,6 +18,155 @@ title: threathunter.io
 
 
 {{% blocks/section color= "light" type="container" %}}
+---
+title: threathunter.io
+---
+
+<div class="body-container push-up">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 center-text" style="margin-bottom: 50px">
+        <h2 class="section-title">Benefits</h2>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-shadow">    
+          <h4 class="section-text-bold">Focus on Code,<br />Not Plumbing</h4>
+          <p class="section-text">
+            Fission lets developers run code functions easily, while automating
+            the menial work of configuring Kubernetes micro-services concepts
+            behind the scenes. Just write your code functions and Fission will
+            make it run on Kubernetes.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-shadow">
+          <h4 class="section-text-bold">
+            Portable: Run your Lambda-like service, anywhere
+          </h4>
+          <p class="section-text">
+            Fission is open source under the Apache license. Fission works on a
+            Kubernetes cluster anywhere: on your laptop, in any public cloud, or
+            in a private data-center. Write your application with the
+            flexibility of deploying it anywhere.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-shadow">
+          <h4 class="section-text-bold">
+            Extensible and<br />
+            Customizable
+          </h4>
+          <p class="section-text">
+            Fission is extensible to any programming language (Python, NodeJS,
+            Go, C#, PHP are supported today). It abstracts away containers by
+            default, but you can build your own containers if you need to.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row feature-section">
+      <div class="col-lg-12 center-text" style="margin-bottom: 50px">
+        <h2 class="section-title">Features</h2>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">Kubernetes Native</h4>
+          </div>
+          <p class="section-text">
+            Fission is open source under the Apache License. It works on a
+            Kubernetes cluster anywhere: in your private datacenter, in a public
+            cloud, or on your laptop.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">Fast Cold-Start</h4>
+          </div>
+          <p class="section-text">
+            Fission maintains a configurable pool of containers, so your
+            functions have very low cold-start latencies, typically ~100msec.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">
+              Declarative Application Specifications
+            </h4>
+          </div>
+          <p class="section-text">
+            Declarative specifications give the developer the capability to
+            define a function once and then deploy it anywhere. Fission
+            resources (functions, triggers etc.) can be checked into source
+            control, and the application can be recreated from them.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">
+              Administration & Operational Simplicity
+            </h4>
+          </div>
+          <p class="section-text">
+            Fission aims for operational simplicity by incorporating logs
+            directly into the CLI, via integration with Fluentd. It also
+            integrates with Prometheus for metrics tracking and dashboard
+            visibility.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">Istio Service-mesh Integration</h4>
+          </div>
+          <p class="section-text">
+            Fission integrates with Istio, which is an open platform to connect,
+            manage and secure micro-services. With Istio, users also get the
+            ability to monitor function usage and trace request latency through
+            dashboards.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">Wide Language Support</h4>
+          </div>
+          <p class="section-text">
+            Fission is extensible to any programming language of your choice.
+            Python, NodeJS, Go, C#, PHP are supported today, but you can build
+            your own custom containers if you need to.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="feature-card">
+          <div class="card-header-custom">
+            <h4 class="section-text-bold">Function Autoscaling</h4>
+          </div>
+          <p class="section-text">
+            Fission provides autoscaling for functions based on CPU usage. In
+            the future, custom metrics will be also supported for scaling
+            functions. You can set the initial and maximum CPU for a function
+            and target CPU at which autoscaling will be triggered.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div style="display: flex; flex-wrap: wrap;">
     <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
