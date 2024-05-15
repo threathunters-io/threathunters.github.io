@@ -17,7 +17,7 @@ title: threathunter.io
 {{< /blocks/cover >}}
 
 
-{{% blocks/section type="container" %}}
+{{% blocks/section color="light" type="container" %}}
 <div class="body-container push-up">
   <div class="container">
     <div class="row">
