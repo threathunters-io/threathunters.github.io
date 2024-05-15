@@ -23,17 +23,13 @@ title: threathunter.io
     <div class="row">
       <div class="col-lg-12">        
         <div class="card-shadow">
-          <div style="flex: 0 0 50%; display: flex; align-items: flex-start; padding: 10px;">
-    <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
-    <div style="flex: 1;">
-        <div style="display: flex; align-items: center;">
-            <h2 style="margin: 0;">Notes</h2>
+                      <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
+        <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
+        <div style="flex: 1; text-align: justify;">
+            <h2>Notes</h2>
+            <p>The 'Notes' section serves as a repository for technical write-ups and detailed descriptions of technical internals. These notes provide in-depth insights into complex systems, technologies, and processes, offering valuable knowledge and understanding for security professionals and enthusiasts alike. Whether you're a seasoned security expert seeking to deepen your understanding or a newcomer looking to explore the intricacies of cybersecurity, the 'Notes' section offers a wealth of information to enhance your expertise and broaden your perspective.</p>
         </div>
-        <p style="text-align: justify; margin-top: 10px;">
-            The 'Notes' section serves as a repository for technical write-ups and detailed descriptions of technical internals. These notes provide in-depth insights into complex systems, technologies, and processes, offering valuable knowledge and understanding for security professionals and enthusiasts alike. Whether you're a seasoned security expert seeking to deepen your understanding or a newcomer looking to explore the intricacies of cybersecurity, the 'Notes' section offers a wealth of information to enhance your expertise and broaden your perspective.
-        </p>
     </div>
-</div>
         </div>
       </div>
       <div class="col-lg-12">  
