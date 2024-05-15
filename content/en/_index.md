@@ -21,7 +21,7 @@ title: threathunter.io
 <div class="body-container push-up">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">        
+      <div class="col-lg-12">        
         <div class="card-shadow">
           <div style="flex: 0 0 50%; display: flex; align-items: flex-start; padding: 10px;">
     <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
@@ -36,7 +36,7 @@ title: threathunter.io
 </div>
         </div>
       </div>
-      <div class="col-lg-4">  
+      <div class="col-lg-12">  
         <div class="card-shadow">
         <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-solid fa-gear" style="font-size: 50px; margin-right: 30px;"></i>
@@ -47,7 +47,7 @@ title: threathunter.io
     </div>
         </div>
       </div>
-      <div class="col-lg-4">        
+      <div class="col-lg-12">        
         <div class="card-shadow">
         <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-brands fa-blogger" style="font-size: 50px; margin-right: 30px;"></i>
