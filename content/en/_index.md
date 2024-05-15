@@ -18,9 +18,9 @@ title: threathunter.io
 
 
 {{% blocks/section color="white" type="container" %}}
-<div class="body-container push-up">
+<div class="body-container push-up" style="display: flex; flex-wrap: wrap;">
   <div class="container">
-    <div class="row" style="display: flex; flex-wrap: wrap;">
+    <div class="row">
       <div class="col-lg-12">        
         <div class="card-shadow">
                       <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
