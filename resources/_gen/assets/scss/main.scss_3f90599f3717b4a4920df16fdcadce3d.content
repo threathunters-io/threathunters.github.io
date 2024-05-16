@@ -258,7 +258,7 @@ input[type="search"]::placeholder {
 .card-shadow {
   padding: 35px 30px 30px 30px;
   text-align: center;
-  box-shadow: 0 5px 10px 0 rgba(41, 26, 204, 0.12);
+  box-shadow: 0 5px 10px 0 #b7b7b7;
   border: none;
   border-radius: 6px;
   height: 100%; }
@@ -366,7 +366,7 @@ input[type="search"]::placeholder {
   transition: .3s background-color ease; }
 
 .card-hover:hover {
-  background-color: #eee; }
+  background-color: #b7b7b7; }
 
 .card-badge {
   background: #f2f0fb;

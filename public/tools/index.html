@@ -1,9 +1,10 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=60991&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:60991/tools/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/tools/index.xml">
+<link rel="alternate" type="text/html" href="http://localhost:1313/tools/_print/">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -20,15 +21,16 @@
 
 <title>Tools | Threathunters.io</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="http://localhost:60991/tools/">
+<meta property="og:url" content="http://localhost:1313/tools/">
   <meta property="og:site_name" content="Threathunters.io">
   <meta property="og:title" content="Tools">
-  <meta property="og:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta property="og:description" content="ExamplesSearchFilter by languageLoading...">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Tools">
-  <meta itemprop="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins."><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Tools">
+  <meta itemprop="description" content="ExamplesSearchFilter by languageLoading...">
+  <meta itemprop="wordCount" content="6"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Tools">
 <meta name="twitter:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
 
 
@@ -56,9 +58,6 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="/about/"><span>About</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/docs/"><span>Notes</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/blog/"><span>Blog</span></a>
@@ -140,7 +139,119 @@
     </header>
     <div class="container-fluid td-default td-outer">
       <main role="main" class="td-main">
-        
+        <div class="container push-down mb-5">
+  <div class="row mb-2">
+    <div class="col-12">
+      <h1 class="font-weight-bold">Examples</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <h5><label class="d-block" for="search">Search</label></h5>
+        <input type="search" placeholder="Search query" class="form-control" 
+          id="search" oninput="updateExampleItems()">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <h5><label class="d-block" for="filter-lang">Filter by language</label></h5>
+        <select class="form-control" id="filter-lang" onchange="updateExampleItems()">
+          <option value="" selected disabled>Loading...</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="example-list"></div>
+</div>
+<script type="text/javascript">
+  const examples = 
+
+	
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+[
+    {
+      "language": "Windows",
+      "tags": [
+        "windows"
+      ],
+      "examples": [
+        {
+          "name": "bluekrabsetw",
+          "description": "bluekrabsetw is a C++ library that simplifies interacting with ETW. It allows for any number of traces and providers to be enabled and for client code to register for event notifications from these traces. bluekrabsetw originates from the krabsetw c++ library and seeks to improve and include capabilities that have not yet been included in the former library.",
+          "link": "https://github.com/threathunters-io/bluekrabsetw",
+          "tags": [
+            "etw"
+          ]
+        }
+      ]
+    }    
+  ]
+  
+;
+
+  let languageOptions = [`<option value="">All</option>`].concat(
+    examples.map(e => `<option value="${e.language}">${e.language}</option>`));
+  document.getElementById("filter-lang").innerHTML = languageOptions.join(' ');
+
+  function updateExampleItems() {;
+      const searchQuery = document.getElementById("search").value.trim().toLowerCase();
+    const selectedLanguageFilter = document.getElementById("filter-lang").value;
+    
+    const exampleItems = examples.map(e => {
+    let filteredLangExamples = e.examples;
+
+if (searchQuery) {
+        filteredLangExamples = filteredLangExamples.filter(example => example.name.toLowerCase().includes(searchQuery) ||
+        example.description.toLowerCase().includes(searchQuery) || 
+        example.tags.find(tag => tag.toLowerCase().includes(searchQuery)) ||
+        e.tags.find(tag => tag.toLowerCase().includes(searchQuery)));
+      }
+if (selectedLanguageFilter) {
+        filteredLangExamples = filteredLangExamples.filter(example => e.language === selectedLanguageFilter || 
+          example.language === selectedLanguageFilter);
+      }
+
+const exampleCards = filteredLangExamples.map(example => {
+const tags = e.tags.concat(example.tags).map(tagText => 
+          `<span class="badge badge-pill badge-primary" style="line-height: 1.2; background-color: #9B9595; color: black;">${tagText}</span>`);
+
+        return `<div class="col-xl-3 col-lg-4 col-md-6 col-12 my-3">
+            <a class="card card-hover h-100 p-3" href="${example.link}" 
+               style="user-select: text; box-shadow: 0 5px 10px 0 #9B9595; text-decoration: none;" draggable="false" target="_blank">
+                <div>
+                  <h4 class="px-2 mb-1 mt-4">${example.name}</h4>
+                  <div class="px-2 mb-2">${example.description}</div>
+                  <h5>${tags.join(' ')}</h5>
+                </div>
+            </a>
+          </div>
+        `
+      });
+
+
+return exampleCards.join(' ');
+}).filter(card => card);    
+
+    document.getElementById("example-list").innerHTML = exampleItems.length > 0 ?
+      exampleItems.join(' ') : `<div class="col-12">No examples available</div>`;
+  }
+  updateExampleItems();
+</script>
+
       </main>
       <footer class="td-footer row d-print-none">
   <div class="container-fluid">
