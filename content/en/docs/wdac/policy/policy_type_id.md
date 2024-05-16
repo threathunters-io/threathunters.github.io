@@ -1,4 +1,5 @@
 ---
+draft: true
 weight: 20
 title: PolicyTypeID
 categories: [Examples]

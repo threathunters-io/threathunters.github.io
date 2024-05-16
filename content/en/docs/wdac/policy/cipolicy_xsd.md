@@ -1,4 +1,5 @@
 ---
+draft: true
 weight: 10
 title: General Layout
 categories: [Examples]

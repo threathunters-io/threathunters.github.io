@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Windows Defender Application Control
 linkTitle: WDAC
 categories: [Examples, Placeholders]
