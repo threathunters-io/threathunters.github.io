@@ -6,7 +6,7 @@ menu: {main: {weight: 10}}
 {{< blocks/cover height="full" color="primary" >}}
 <div style="display: flex; align-items: center;">
     <div style="flex: 1; margin-right: 20px;">
-        <img src="db_logo.png" alt="Description of the image" width="80%">
+        <img src="DB_logo_white_rgb_100px.svg" alt="Description of the image" width="80%">
     </div>
     <div style="flex: 1; text-align: justify;">
         <h1>Who we are?</h1>
