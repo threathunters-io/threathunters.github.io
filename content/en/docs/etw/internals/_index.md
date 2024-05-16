@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Internals
 linkTitle: Internals
 categories: [Examples, Placeholders]

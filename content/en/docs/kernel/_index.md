@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Kernel
 linkTitle: Kernel
 categories: [Examples, Placeholders]

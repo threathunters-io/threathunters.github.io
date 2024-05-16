@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Internals Example Page
 categories: [Examples]
 tags: [test, sample, docs]

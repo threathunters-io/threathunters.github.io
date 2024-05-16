@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Event Tracing for Windows
 linkTitle: ETW
 categories: [Examples, Placeholders]

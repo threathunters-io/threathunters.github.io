@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Placeholders on Threathunters.io</title>
-    <link>http://localhost:60991/categories/placeholders/</link>
+    <link>http://localhost:1313/categories/placeholders/</link>
     <description>Recent content in Placeholders on Threathunters.io</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:60991/categories/placeholders/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/placeholders/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Event Tracing for Windows</title>
-      <link>http://localhost:60991/docs/etw/</link>
+      <link>http://localhost:1313/docs/etw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60991/docs/etw/</guid>
+      <guid>http://localhost:1313/docs/etw/</guid>
       <description>This is a placeholder page. Replace it with your own content.&#xA;TODO</description>
     </item>
     <item>
       <title>Internals</title>
-      <link>http://localhost:60991/docs/etw/internals/</link>
+      <link>http://localhost:1313/docs/etw/internals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60991/docs/etw/internals/</guid>
+      <guid>http://localhost:1313/docs/etw/internals/</guid>
       <description>TODO</description>
     </item>
     <item>
       <title>Kernel</title>
-      <link>http://localhost:60991/docs/kernel/</link>
+      <link>http://localhost:1313/docs/kernel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:60991/docs/kernel/</guid>
+      <guid>http://localhost:1313/docs/kernel/</guid>
       <description>TODO</description>
     </item>
   </channel>
