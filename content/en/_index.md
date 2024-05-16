@@ -5,10 +5,10 @@ title: threathunter.io
 {{< blocks/cover height="full" color="primary" >}}
 <div style="display: flex; align-items: center;">
     <div style="flex: 1; margin-right: 20px;">
-        <img src="images/logo_transparent.png" alt="Description of the image" style="max-width: 100%; height: auto;">
+        <img src="images/logo_transparent.png" alt="Description of the image" style="max-width: 80%; height: auto;">
     </div>
     <div style="flex: 1; text-align: justify;">
-        <h1>Community for Security Experts</h1>
+        <h2>Community for Security Experts</h2>
         <p>Technical community to exchange knowledge with other security experts, focusing on enhancing cybersecurity measures and mitigating risks.</p>
     </div>
 </div>
@@ -21,7 +21,7 @@ title: threathunter.io
 <div class="body-container push-up" style="display: flex; flex-wrap: wrap;">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">        
+      <div class="col-lg-20">        
         <div class="card-shadow">
                       <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-solid fa-clipboard" style="font-size: 50px; margin-right: 30px;"></i>
@@ -32,7 +32,7 @@ title: threathunter.io
     </div>
         </div>
       </div>
-      <div class="col-lg-12">  
+      <div class="col-lg-20">  
         <div class="card-shadow">
         <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-solid fa-gear" style="font-size: 50px; margin-right: 30px;"></i>
@@ -43,7 +43,7 @@ title: threathunter.io
     </div>
         </div>
       </div>
-      <div class="col-lg-12">        
+      <div class="col-lg-20">        
         <div class="card-shadow">
         <div style="flex: 0 0 50%; display: flex; align-items: top; padding: 10px;">
         <i class="fa-brands fa-blogger" style="font-size: 50px; margin-right: 30px;"></i>
