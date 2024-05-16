@@ -19,7 +19,7 @@ menu: {main: {weight: 30}}
     </div>
     <div class="col">
       <div class="form-group">
-        <h5><label class="d-block" for="filter-lang">Filter by language</label></h5>
+        <h5><label class="d-block" for="filter-lang">Filter by operating system</label></h5>
         <select class="form-control" id="filter-lang" onchange="updateExampleItems()">
           <option value="" selected disabled>Loading...</option>
         </select>
