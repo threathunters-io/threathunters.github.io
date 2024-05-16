@@ -6,7 +6,7 @@ menu: {main: {weight: 30}}
 <div class="container push-down mb-5">
   <div class="row mb-2">
     <div class="col-12">
-      <h1 class="font-weight-bold">Examples</h1>
+      <h1 class="font-weight-bold">Tools</h1>
     </div>
   </div>
   <div class="row">
