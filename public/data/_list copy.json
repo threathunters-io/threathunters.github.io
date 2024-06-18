@@ -1,0 +1,35 @@
+
+[
+    {
+      "language": "Windows",
+      "tags": [
+        "windows"
+      ],
+      "examples": [
+        {
+          "name": "bluekrabsetw",
+          "description": "bluekrabsetw is a C++ library that simplifies interacting with ETW. It allows for any number of traces and providers to be enabled and for client code to register for event notifications from these traces. bluekrabsetw originates from the krabsetw c++ library and seeks to improve and include capabilities that have not yet been included in the former library.",
+          "link": "https://github.com/threathunters-io/bluekrabsetw",
+          "tags": [
+            "etw"
+          ]
+        }
+      ]
+    },
+    {
+      "language": "Linux",
+      "tags": [
+        "linux"
+      ],
+      "examples": [
+        {
+          "name": "Laurel",
+          "description": "LAUREL is an event post-processing plugin for auditd(8) that generates useful, enriched JSON-based audit logs suitable for modern security monitoring setups.",
+          "link": "https://github.com/threathunters-io/laurel",
+          "tags": [
+            "auditd(8)"
+          ]
+        }
+      ]
+    } 
+  ]

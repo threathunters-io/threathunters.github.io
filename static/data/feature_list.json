@@ -1,0 +1,41 @@
+[
+  {
+    "language": "",
+    "tags": [],
+    "examples": [
+      {
+        "name": "Notes",
+        "description": "The 'Notes' section serves as a repository for technical write-ups and detailed descriptions of technical internals. These notes provide in-depth insights into complex systems, technologies, and processes, offering valuable knowledge and understanding for security professionals and enthusiasts alike. Whether you're a seasoned security expert seeking to deepen your understanding or a newcomer looking to explore the intricacies of cybersecurity, the 'Notes' section offers a wealth of information to enhance your expertise and broaden your perspective.",
+        "link": "https://threathunters.io/notes/",
+        "icon": "fa-solid fa-clipboard",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "language": "",
+    "tags": [],
+    "examples": [
+      {
+        "name": "Blog",
+        "description": "The 'Blog' section features insightful articles, analysis, and commentary on various topics related to cybersecurity, incident response, threat hunting, and more. Stay informed about the latest trends, best practices, and emerging technologies in the ever-evolving field of cybersecurity through our engaging and informative blog posts.",
+        "link": "https://threathunters.io/blog/",
+        "icon": "fa-brands fa-blogger",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "language": "",
+    "tags": [],
+    "examples": [
+      {
+        "name": "Tools",
+        "description": "The 'Tools' section serves as a public software repository, offering a diverse range of tools, libraries, and resources for security professionals and enthusiasts. This collection provides valuable resources to enhance cybersecurity practices and facilitate security research.",
+        "link": "https://threathunters.io/tools/",
+        "icon": "fa-solid fa-gear",
+        "tags": []
+      }
+    ]
+  }
+]

@@ -35,7 +35,7 @@
   <meta itemprop="description" content="QLOG provides lightweigth userland logging of process create events on Windows written in C#. It&rsquo;s under development and currently in experimental state. QLOG uses ETW to collect telemetry, it doesn’t use API hooks and it doesn’t require a driver to be installed on the target system, Currently QLOG supports “process create” events, but other enriched events may follow soon. QLOG runs as a Windows Services, but can also run in console mode, if you want to output to console directly.">
   <meta itemprop="datePublished" content="2021-12-29T00:00:00+00:00">
   <meta itemprop="dateModified" content="2021-12-29T00:00:00+00:00">
-  <meta itemprop="wordCount" content="486">
+  <meta itemprop="wordCount" content="478">
   <meta itemprop="keywords" content="Post,Blog"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="QLOG - ETW logging for process creation events">
 <meta name="twitter:description" content="QLOG provides lightweigth userland logging of process create events on Windows written in C#. It&rsquo;s under development and currently in experimental state. QLOG uses ETW to collect telemetry, it doesn’t use API hooks and it doesn’t require a driver to be installed on the target system, Currently QLOG supports “process create” events, but other enriched events may follow soon. QLOG runs as a Windows Services, but can also run in console mode, if you want to output to console directly.">
 
@@ -190,10 +190,6 @@
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-blogreleases-li">
-  <input type="checkbox" id="m-blogreleases-check"/>
-  <label for="m-blogreleases-check"><a href="/blog/releases/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-blogreleases"><span class="">Releases</span></a></label>
-  
 </li>
   </ul>
 </li>
@@ -270,7 +266,7 @@
 	<p>QLOG provides lightweigth userland logging of process create events on Windows written in C#. It&rsquo;s under development and currently in experimental state. QLOG uses ETW to collect telemetry, it doesn’t use API hooks and it doesn’t require a driver to be installed on the target system, Currently QLOG supports “process create” events, but other enriched events may follow soon. QLOG runs as a Windows Services, but can also run in console mode, if you want to output to console directly. I&rsquo;ve started QLOG to get a better understanding of Windows ETW and some Windows Eventlog APIs.</p>
 <p>QLOG is a research experiment, please don&rsquo;t use it on production systems.</p>
 <p>Update July, 2022</p>
-<p>We started QLOG as an experiment to learn more about Windows ETW. QLOG provides enriched Logging for process creation events on Windows. We have stopped development of QLOG because in the meantime free tools were published which use ETW for telemetry and do a way better job than QLOG. Curious? Have a look a <a href="%22https://www.nextron-systems.com/aurora/%22">Aurora Agent from Nextron</a></p>
+<p>We started QLOG as an experiment to learn more about Windows ETW. QLOG provides enriched Logging for process creation events on Windows. We have stopped development of QLOG because we ended QLOG development and startet a new project, which is now based on krabsEtw which provides a way better performance.</p>
 <h3 id="how-does-it-work">How does it work</h3>
 <p>QLOG reads from ETW, enriches events and writes enriched events to Event log channel “QLOG”.</p>
 <h3 id="development--license">Development &amp; License</h3>
