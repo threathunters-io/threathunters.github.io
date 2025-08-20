@@ -462,7 +462,7 @@ input[type="search"]::placeholder {
 }
 
 .card-hover:hover {
-  background-color: #b7b7b7;
+  background-color: inherit; //#b7b7b7;
 }
 
 .card-badge {
