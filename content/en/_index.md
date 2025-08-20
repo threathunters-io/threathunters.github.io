@@ -64,11 +64,28 @@ title: threathunter.io
 We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/threathuntersio" url_text="Twitter" %}}
+{{% blocks/feature 
+    icon="fab fa-twitter" 
+    title="Follow us on Twitter!" 
+    url="https://twitter.com/threathuntersio" 
+    url_text="Twitter" %}}
 For announcement of latest news etc.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-regular fa-envelope" title="Get in Touch!" url="mailto:your@email.com" url_text="Mail" %}}
+{{% blocks/feature 
+    icon="fa-solid fa-user-plus" 
+    title="Join the Alpha!" 
+    url="https://your-form-link.com" 
+    url_text="Register to Collaborate" 
+%}}
+{{% /blocks/feature %}}
+
+{{% blocks/feature 
+    icon="fa-regular fa-envelope" 
+    title="Get in Touch!" 
+    url="mailto:your@email.com" 
+    url_text="Mail" 
+%}}
 {{% /blocks/feature %}}
 
 {{% /blocks/section %}}
