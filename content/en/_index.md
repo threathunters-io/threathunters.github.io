@@ -73,14 +73,6 @@ For announcement of latest news etc.
 {{% /blocks/feature %}}
 
 {{% blocks/feature 
-    icon="fa-solid fa-user-plus" 
-    title="Join the Alpha!" 
-    url="https://your-form-link.com" 
-    url_text="Register to Collaborate" 
-%}}
-{{% /blocks/feature %}}
-
-{{% blocks/feature 
     icon="fa-regular fa-envelope" 
     title="Get in Touch!" 
     url="mailto:your@email.com" 
