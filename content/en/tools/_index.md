@@ -68,8 +68,8 @@ const tags = e.tags.concat(example.tags).map(tagText =>
                   <h5>${tags.join(' ')}</h5>
 
                   <!-- Button inside the card -->
-                  ${example.registerLink ? `
-                  <a href="${example.registerLink}" target="_blank" 
+                  ${example.register ? `
+                  <a href="${example.register}" target="_blank" 
                      class="btn btn-primary btn-sm mt-3" style="display: inline-block;">
                       Register
                   </a>` : ''}
