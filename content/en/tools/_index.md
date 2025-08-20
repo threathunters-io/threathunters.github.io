@@ -60,27 +60,24 @@ const tags = e.tags.concat(example.tags).map(tagText =>
           `<span class="badge badge-pill badge-primary" style="line-height: 1.2; background-color: #9B9595; color: black;">${tagText}</span>`);
 
         return `<div class="col-xl-3 col-lg-4 col-md-6 col-12 my-3">
-                <div class="card card-hover h-100 p-3" 
-                     style="user-select: text; box-shadow: 0 5px 10px 0 #9B9595; text-decoration: none;" 
-                     draggable="false">
-                    <div>
-                        <h4 class="px-2 mb-1 mt-4">
-                            <a href="${example.link}" target="_blank" style="text-decoration: none; color: inherit;">
-                                ${example.name}
-                            </a>
-                        </h4>
-                        <div class="px-2 mb-2">${example.description}</div>
-                        <h5>${tags.join(' ')}</h5>
-            
-                        <!-- Button inside the card -->
-                        ${example.register ? `
-                        <a href="${example.register}" target="_blank" 
-                           class="btn btn-primary btn-sm mt-3" style="display: inline-block;">
-                            Register
-                        </a>` : ''}
-                    </div>
-                </div>
-            </div>
+                  <div class="card card-hover h-100 p-3" 
+                       style="user-select: text; box-shadow: 0 5px 10px 0 #9B9595; cursor: pointer;" 
+                       draggable="false"
+                       onclick="window.open('${example.link}', '_blank')">
+                      <div>
+                          <h4 class="px-2 mb-1 mt-4">${example.name}</h4>
+                          <div class="px-2 mb-2">${example.description}</div>
+                          <h5>${tags.join(' ')}</h5>
+              
+                          <!-- Button inside the card -->
+                          ${example.register ? `
+                          <a href="${example.register}" target="_blank" 
+                             class="btn btn-primary btn-sm mt-3" style="display: inline-block;" onclick="event.stopPropagation();">
+                              Register
+                          </a>` : ''}
+                      </div>
+                  </div>
+              </div>
         `
       });
 
