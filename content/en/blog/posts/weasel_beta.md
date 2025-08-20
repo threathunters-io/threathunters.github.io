@@ -6,7 +6,6 @@ categories: [posts]
 tags: [post, blog]
 
 ---
-
 Most commercial sensors in the threat-hunting space are effective at data collection, but they often obscure critical details about how and under what conditions that data is captured. This lack of transparency makes sense from a vendor’s perspective—protecting intellectual property—but it leaves defenders with limited insight and little flexibility. With Weasel, we’re working toward closing that gap. The vision is to give engineers fine-grained control over collection logic, ensure data relevance, and provide the adaptability needed to handle enterprise-specific use cases and evolving threat landscapes.
 
 Right now, Weasel is in an ongoing beta phase—a serious, iterative effort to bring the sensor to a production-ready state. The current focus is on thoroughly testing the event pipeline, ensuring reliable collection and enrichment of relevant data. This step is essential before moving on to broader goals like transparency and adaptability. By running the sensor in diverse setups and gathering feedback directly from friends and early collaborators, we can refine the core engine, improve reliability, and optimize the efficiency of one of Weasel’s most critical features.
