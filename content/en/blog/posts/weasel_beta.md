@@ -7,11 +7,13 @@ tags: [post, blog]
 
 ---
 Most commercial sensors in the threat-hunting space are effective at data collection, but they often obscure critical details about how and under what conditions that data is captured. This lack of transparency makes sense from a vendor’s perspective—protecting intellectual property—but it leaves defenders with limited insight and little flexibility. With Weasel, we’re working toward closing that gap. The vision is to give engineers fine-grained control over collection logic, ensure data relevance, and provide the adaptability needed to handle enterprise-specific use cases and evolving threat landscapes.
+
 Right now, Weasel is in an ongoing beta phase—a serious, iterative effort to bring the sensor to a production-ready state. The current focus is on thoroughly testing the event pipeline, ensuring reliable collection and enrichment of relevant data. This step is essential before moving on to broader goals like transparency and adaptability. By running the sensor in diverse setups and gathering feedback directly from friends and early collaborators, we can refine the core engine, improve reliability, and optimize the efficiency of one of Weasel’s most critical features.
 
 ### How Weasel Works
 Weasel can be started either as a command-line tool or as a Windows service, giving engineers flexibility depending on their environment and operational requirements. Once running, it collects security-relevant system events and writes them directly into the Windows Event Log. We chose this storage location because the Windows Event Log format is well-known, widely documented, and integrates seamlessly with a broad range of SIEM solutions.
-Here’s an example of a Windows Event Log entry for an ImageLoad event produced by Weasel. This event illustrates heavily enriched telemetry: it records not just that a DLL or executable was loaded, but also cryptographic hashes (MD5, SHA1, SHA256), image metadata, process and thread IDs, parent command line, and certificate validation info. This depth of detail helps security teams understand both what was loaded and the surrounding context, making each event far more actionable than raw logs alone.
+
+Here’s an example of a Windows Event Log entry for an `ImageLoad` event produced by Weasel. This event illustrates heavily enriched telemetry: it records not just that a DLL or executable was loaded, but also cryptographic hashes (MD5, SHA1, SHA256), image metadata, process and thread IDs, parent command line, and certificate validation info. This depth of detail helps security teams understand both what was loaded and the surrounding context, making each event far more actionable than raw logs alone.
 
 ```xml
 - <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
@@ -69,9 +71,9 @@ Here’s an example of a Windows Event Log entry for an ImageLoad event produced
   </EventData>
   </Event>
 ```
-In order to manage the collection of events efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named weasel_filter.config, which must reside in the same directory as the Weasel executable.
+In order to manage the collection of events efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named `weasel_filter.config`, which must reside in the same directory as the Weasel executable.
 
-The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. For example:
+The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. This layered filtering design ensures that only relevant and context-aware events make it into the pipeline, reducing noise while giving engineers fine-grained control over what matters in their environment. For example:
 ```yml
 rule openprocess_taskmgr {
     meta:
@@ -98,6 +100,6 @@ rule ExcludeSpecificCommandLine {
 }
 ```
 
-> YARA has proven suitable for our use case, but its performance heavily depends on how rules are designed. In particular, using complex constructs like regular expressions can significantly degrade performance, so careful rule design is essential.
+> Disclaimer: YARA has proven suitable for our use case, but its performance heavily depends on how rules are designed. In particular, using complex constructs like regular expressions can significantly degrade performance, so careful rule design is essential.
 
-This layered filtering design ensures that only relevant and context-aware events make it into the pipeline, reducing noise while giving engineers fine-grained control over what matters in their environment.
+
