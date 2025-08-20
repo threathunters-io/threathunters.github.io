@@ -1,0 +1,111 @@
+---
+date: 2025-08-20
+draft: false
+title: WEASEL Beta: Shaping a Sensor Built with and for Security Engineers
+categories: [posts]
+tags: [post, blog]
+
+---
+
+Most commercial sensors in the threat-hunting space are effective at data collection, but they often obscure critical details about how and under what conditions that data is captured. This lack of transparency makes sense from a vendor’s perspective—protecting intellectual property—but it leaves defenders with limited insight and little flexibility. With Weasel, we’re working toward closing that gap. The vision is to give engineers fine-grained control over collection logic, ensure data relevance, and provide the adaptability needed to handle enterprise-specific use cases and evolving threat landscapes.
+
+Right now, Weasel is in an ongoing beta phase—a serious, iterative effort to bring the sensor to a production-ready state. The current focus is on thoroughly testing the event pipeline, ensuring reliable collection and enrichment of relevant data. This step is essential before moving on to broader goals like transparency and adaptability. By running the sensor in diverse setups and gathering feedback directly from friends and early collaborators, we can refine the core engine, improve reliability, and optimize the efficiency of one of Weasel’s most critical features.
+
+### How Weasel Works
+Weasel can be started either as a command-line tool or as a Windows service, giving engineers flexibility depending on their environment and operational requirements. Once running, it collects security-relevant system events and writes them directly into the Windows Event Log. We chose this storage location because the Windows Event Log format is well-known, widely documented, and integrates seamlessly with a broad range of SIEM solutions.
+
+Here’s an example of a Windows Event Log entry for an ImageLoad event produced by Weasel:
+
+```xml
+- <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+- <System>
+  <Provider Name="Weasel" Guid="{aaaaaaaa-bbbb-cccc-dddd-deadbeefcafe}" /> 
+  <EventID>101</EventID> 
+  <Version>0</Version> 
+  <Level>4</Level> 
+  <Task>0</Task> 
+  <Opcode>0</Opcode> 
+  <Keywords>0x1000000000000000</Keywords> 
+  <TimeCreated SystemTime="2025-08-19T09:37:27.3896327Z" /> 
+  <EventRecordID>66889157</EventRecordID> 
+  <Correlation /> 
+  <Execution ProcessID="1984" ThreadID="3360" /> 
+  <Channel>Weasel/Events</Channel> 
+  <Computer>EC2AMAZ-1VMFR4A</Computer> 
+  <Security UserID="S-1-5-18" /> 
+  </System>
+- <EventData>
+  <Data Name="SequenceNumber">15794</Data> 
+  <Data Name="TimeStamp">2025-08-19T09:37:26.0824469Z</Data> 
+  <Data Name="ProcessStartKey">147492887796384098</Data> 
+  <Data Name="ProcessId">72</Data> 
+  <Data Name="ImageName">\Device\HarddiskVolume1\Windows\System32\shlwapi.dll</Data> 
+  <Data Name="ImageOriginalName">SHLWAPI.DLL</Data> 
+  <Data Name="MotW">false</Data> 
+  <Data Name="ProcessTime">134000698471428917</Data> 
+  <Data Name="ThreadId">4752</Data> 
+  <Data Name="UserSid">S-1-5-18</Data> 
+  <Data Name="SessionId">0</Data> 
+  <Data Name="ImageMD5Size">16</Data> 
+  <Data Name="ImageMD5">7367F63004B859FD08E91AD43C20B056</Data> 
+  <Data Name="ImageSHA1Size">20</Data> 
+  <Data Name="ImageSHA1">59AA8BEEB96F6F5EA779215C0A012716E753D4DB</Data> 
+  <Data Name="ImageSHA256Size">32</Data> 
+  <Data Name="ImageSHA256">A9313B9447FEFFC201F7695143AD5EA31609F5BE7E0DB61EDA929915B24D73CE</Data> 
+  <Data Name="PartialCRC1">326707429</Data> 
+  <Data Name="PartialCRC2">-1519667353</Data> 
+  <Data Name="PartialCRC3">-974797092</Data> 
+  <Data Name="SystemModeImage">false</Data> 
+  <Data Name="LoadImageAddress">0x7ff89a430000</Data> 
+  <Data Name="LoadImageSize">389120</Data> 
+  <Data Name="ImageLSHSize">64</Data> 
+  <Data Name="ImageLSH">AFE9F7AF6BED9F5E7BEEFA6BDB99F556DF9B6EDD7AF575E96DA6776D6E66675EE67A59E5FABBEEA6E5F96AD9956EAFD5BDDF9FE56DE9BBE5B55A57E5B9DFBBB7</Data> 
+  <Data Name="CiIsSigningChainValid">1</Data> 
+  <Data Name="CiIsMicrosoftRoot">1</Data> 
+  <Data Name="CiIsMicrosoftApplicationRoot">2</Data> 
+  <Data Name="CiSigningLevel">12</Data> 
+  <Data Name="ImageSignatureLevel">12</Data> 
+  <Data Name="ImageDeviceType">7</Data> 
+  <Data Name="ImageDeviceCharacteristics">131072</Data> 
+  <Data Name="ImageDeviceFlags">2101584</Data> 
+  <Data Name="AdditionalFields">{"CommandLine":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe \"function Convert-GuidToCompressedGuid {\n\t\t\t\t\t\t[CmdletBinding()]\n\t\t\t\t\t\t[OutputType('System.String')]\n\t\t\t\t\t\tparam (\n\t\t\t\t\t\t\t[Parameter(ValueFromPipeline=\\\"\\\", ValueFromPipelineByPropertyName=\\\"\\\", Mandatory=$true)]\n\t\t\t\t\t\t\t[string]$Guid\n\t\t\t\t\t\t)\n\t\t\t\t\t\tbegin {\n\t\t\t\t\t\t\t$Guid = $Guid.Replace('-', '').Replace('{', '').Replace('}', '')\n\t\t\t\t\t\t}\n\t\t\t\t\t\tprocess {\n\t\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\t\t$Groups = @(\n\t\t\t\t\t\t\t\t\t$Guid.Substring(0, 8).ToCharArray(),\n\t\t\t\t\t\t\t\t\t$Guid.Substring(8, 4).ToCharArray(),\n\t\t\t\t\t\t\t\t\t$Guid.Substring(12, 4).ToCharArray(),\n\t\t\t\t\t\t\t\t\t$Guid.Substring(16, 16).ToCharArray()\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t$Groups[0..2] | foreach {\n\t\t\t\t\t\t\t\t\t[array]::Reverse($_)\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t$CompressedGuid = ($Groups[0..2] | foreach { $_ -join '' }) -join ''\n\n\t\t\t\t\t\t\t\t$chararr = $Groups[3]\n\t\t\t\t\t\t\t\tfor ($i = 0; $i -lt $chararr.count; $i++) {\n\t\t\t\t\t\t\t\t\tif (($i % 2) -eq 0) {\n\t\t\t\t\t\t\t\t\t\t$CompressedGuid += ($chararr[$i+1] + $chararr[$i]) -join ''\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t$CompressedGuid\n\t\t\t\t\t\t\t} catch {\n\t\t\t\t\t\t\t\tWrite-Error $_.Exception.Message\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n function Clean-Quotes-Backslash {\n param ([string]$str)\n if($str.length -ge 2 -and $str.Substring(0,1) -eq '\\\"' -and $str.Substring($str.length - 1) -eq '\\\"'){\n $str = $str.Substring(1, $str.length - 2)\n }\n $str = $str.Replace('\\', '\\\\')\n $str = $str.Replace('\\\"', '\\\\\\\"')\n return $str\n }\n\t\t\t\t $products = Get-ItemProperty HKLM:\\Software\\Classes\\Installer\\Products\\* | Select-Object @{n=\\\"PSChildName\\\";e={$_.\\\"PSChildName\\\"}} |\n\t\t\t\t Select -expand PSChildName\n\n\t\t\t\t \n[Console]::OutputEncoding = [System.Text.Encoding]::UTF8\nGet-ItemProperty HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* |\nWhere-Object {($_.DisplayName -ne $null -and $_DisplayName -ne '' -and $_.DisplayName -notmatch '^KB[000000-999999]') -and\n\t($_.SystemComponent -eq $null -or ($_.SystemComponent -ne $null -and $_.SystemComponent -eq '0')) -and\n\t($_.ParentKeyName -eq $null) -and\n\t($_.WindowsInstaller -eq $null -or ($_.WindowsInstaller -eq '0') -or ($_.WindowsInstaller -eq 1 -and $products -contains (Convert-GuidToCompressedGuid $_.PSChildName))) -and\n\t($_.ReleaseType -eq $null -or ($_.ReleaseType -ne $null -and\n\t\t$_.ReleaseType -ne 'Security Update' -and\n\t\t$_.ReleaseType -ne 'Update Rollup' -and\n\t\t$_.ReleaseType -ne 'Hotfix'))\n} |\nSelect-Object @{n=\\\"Name\\\";e={$_.\\\"DisplayName\\\"}},\n\t@{n=\\\"PackageId\\\";e={$_.\\\"PSChildName\\\"}}, @{n=\\\"Version\\\";e={$_.\\\"DisplayVersion\\\"}}, Publisher,\n\t@{n=\\\"InstalledTime\\\";e={[datetime]::ParseExact($_.\\\"InstallDate\\\",\\\"yyyyMMdd\\\",$null).ToUniversalTime().ToString(\\\"yyyy-MM-ddTHH:mm:ssZ\\\")}} | % { [Console]::WriteLine(@\\\"\n{\\\"Name\\\":\\\"$(Clean-Quotes-Backslash $_.Name)\\\",\\\"PackageId\\\":\\\"$($_.PackageId)\\\",\\\"Version\\\":\\\"$(Clean-Quotes-Backslash $_.Version)\\\",\\\"Publisher\\\":\\\"$(Clean-Quotes-Backslash $_.Publisher)\\\",\\\"InstalledTime\\\":\\\"$($_.InstalledTime)\\\"},\n\\\"@)} \"","ImageName":"\\Device\\HarddiskVolume1\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","ParentCommandLine":"\"C:\\Program Files\\Amazon\\SSM\\ssm-document-worker.exe\" 83c515ee-d89a-48d8-9106-de99096e5c6c.2025-08-19T09-35-34.307Z","ParentImageName":"\\Device\\HarddiskVolume1\\Program Files\\Amazon\\SSM\\ssm-document-worker.exe","ParentPid":956,"ParentStartkey":253,"Pid":72}</Data> 
+  </EventData>
+  </Event>
+```
+
+Weasel can be started either as a command-line tool or as a Windows service, giving engineers flexibility depending on their environment and operational requirements. Once running, it collects security-relevant system events and writes them directly into the Windows Event Log. We chose this storage location for two reasons:
+
+The Windows Event Log format is well-known and widely documented.
+
+It already integrates seamlessly with a broad range of SIEM solutions, making it easy to feed Weasel’s output into existing detection and monitoring pipelines without custom connectors or parsers.
+
+In order to manage the collection of events efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named weasel_filter.config, which must reside in the same directory as the Weasel executable.
+
+The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. For example:
+
+```yml
+rule openprocess_taskmgr {
+    meta:
+      description = "meant to find openprocess() from taskmgr to explorer"
+      event = "openprocess"
+      field = "TargetProcess"
+    strings:
+        $a = "explorer" wide nocase
+    condition:
+        any of them
+}
+```
+```yml
+rule ExcludeSpecificCommandLine {
+    meta:
+      description = "excludes uninteresting processes"
+      event = "processcreate"
+      field = "CommandLine"
+    strings:
+        $excluded_path1 = "C:\\Windows\\system32\\DllHost.exe /Processid" wide nocase
+    condition:
+        not ($excluded_path1) 
+}
+```
+
+This layered filtering design ensures that only relevant and context-aware events make it into the pipeline, reducing noise while giving engineers fine-grained control over what matters in their environment.
