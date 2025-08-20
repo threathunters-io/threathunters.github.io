@@ -15,7 +15,7 @@ Weasel can be started either as a command-line tool or as a Windows service, giv
 
 Here’s an example of a Windows Event Log entry for an ImageLoad event produced by Weasel:
 
-```c++
+```xml
 - <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
 - <System>
   <Provider Name="Weasel" Guid="{aaaaaaaa-bbbb-cccc-dddd-deadbeefcafe}" /> 
@@ -74,7 +74,7 @@ Here’s an example of a Windows Event Log entry for an ImageLoad event produced
 In order to manage the collection of events efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named weasel_filter.config, which must reside in the same directory as the Weasel executable.
 
 The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. For example:
-```yara
+```yml
 rule openprocess_taskmgr {
     meta:
       description = "meant to find openprocess() from taskmgr to explorer"
@@ -87,7 +87,7 @@ rule openprocess_taskmgr {
 }
 ```
 
-```yara
+```yml
 rule ExcludeSpecificCommandLine {
     meta:
       description = "excludes uninteresting processes"
