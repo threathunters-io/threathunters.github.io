@@ -60,13 +60,21 @@ const tags = e.tags.concat(example.tags).map(tagText =>
           `<span class="badge badge-pill badge-primary" style="line-height: 1.2; background-color: #9B9595; color: black;">${tagText}</span>`);
 
         return `<div class="col-xl-3 col-lg-4 col-md-6 col-12 my-3">
-            <a class="card card-hover h-100 p-3" href="${example.link}" 
+            <a class="card card h-100 p-3" href="${example.link}" 
                style="user-select: text; box-shadow: 0 5px 10px 0 #9B9595; text-decoration: none;" draggable="false" target="_blank">
                 <div>
                   <h4 class="px-2 mb-1 mt-4">${example.name}</h4>
                   <div class="px-2 mb-2">${example.description}</div>
                   <h5>${tags.join(' ')}</h5>
                 </div>
+                <!-- Conditional button -->
+                ${example.register ? `
+                  <div class="px-2 mt-3">
+                      <a href="${example.register}" target="_blank" class="btn btn-primary btn-sm">
+                          Register
+                      </a>
+                  </div>` : ''}
+              </div>
             </a>
           </div>
         `
