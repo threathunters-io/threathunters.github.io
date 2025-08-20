@@ -1,21 +1,25 @@
 ---
 date: 2025-08-20
 draft: false
-title: "WEASEL Beta: Shaping a Sensor Built with and for Security Engineers"
+title: "WEASEL Alpha: Shaping a Sensor Built with and for Security Engineers"
 categories: [posts]
 tags: [post, blog]
 
 ---
 Most commercial sensors in the threat-hunting space are effective at data collection, but they often obscure critical details about how and under what conditions that data is captured. This lack of transparency makes sense from a vendor’s perspective—protecting intellectual property—but it leaves defenders with limited insight and little flexibility. With Weasel, we’re working toward closing that gap. The vision is to give engineers fine-grained control over collection logic, ensure data relevance, and provide the adaptability needed to handle enterprise-specific use cases and evolving threat landscapes.
 
-To achieve this, Weasel employs a side-by-side architecture that separates raw data collection from detection logic. The collection engine captures all relevant system actions, enriches each event with contextual metadata, and can optionally apply filters for efficiency or targeted monitoring of the data collection stream. These filters do not restrict the detection engine, which operates on the full enriched dataset. This separation allows for deeper, more complex analysis, correlation across events, and advanced detection logic while maintaining high-fidelity telemetry. By keeping enrichment in the core and filtering configurable but independent, Weasel ensures comprehensive, actionable data for defenders without compromising performance or adaptability.
+To achieve this, Weasel employs a side-by-side architecture that separates raw data collection from detection logic. The collection engine captures all relevant system actions, enriches each record with contextual metadata, and can optionally apply filters for efficiency or targeted monitoring of the data collection stream. These filters do not restrict the detection engine, which operates on the full enriched dataset. This separation allows for deeper, more complex analysis, correlation across records, and advanced detection logic while maintaining high-fidelity telemetry. By keeping enrichment in the core and filtering configurable but independent, Weasel ensures comprehensive, actionable data for defenders without compromising performance or adaptability.
 
-Right now, Weasel is in an ongoing beta phase—a serious, iterative effort to bring the sensor to a production-ready state. The current focus is on thoroughly testing the event pipeline, ensuring reliable collection and enrichment of relevant data. This step is essential before moving on to broader goals like transparency and adaptability. By running the sensor in diverse setups and gathering feedback directly from friends and early collaborators, we can refine the core engine, improve reliability, and optimize the efficiency of one of Weasel’s most critical features.
+Right now, Weasel is in an ongoing alpha phase—a serious, iterative effort to bring the sensor to a production-ready state. The current focus is on thoroughly testing the record pipeline, ensuring reliable collection and enrichment of relevant data. This step is essential before moving on to broader goals like transparency and adaptability. By running the sensor in diverse setups and gathering feedback directly from friends and early collaborators, we can refine the core engine, improve reliability, and optimize the efficiency of one of Weasel’s most critical features. Our testing approach is organized into feature-based test cycles. Rather than waiting for a large milestone release, each cycle focuses on a specific feature or improvement, which is introduced, validated, and refined in close collaboration with stakeholders. This iterative method ensures that new functionality is continuously tested in realistic conditions, feedback is gathered early, and improvements can be incorporated quickly into the development process. In this case, the feature-based cycle specifically targets the record pipeline, to validate processing, collection, and enrichment before broader deployment.
+
+For the alpha test, a preselected set of representative record types is used to validate the record pipeline. These records cover multiple categories—including process, network, IPC, file, endpoint, and detection activities—and are processed in a controlled manner to ensure that the pipeline correctly ingests, interprets, and handles each defined action.
+
+> At this stage, the categories of records to be collected are not yet configurable. However, this functionality is planned and already under development. Once the record pipeline reaches a beta or release state, configurability will be introduced as the next feature in the iterative test series.
 
 ### How Weasel Works
 Weasel can be started either as a command-line tool or as a Windows service, giving engineers flexibility depending on their environment and operational requirements. Once running, it collects security-relevant system records and writes them directly into the Windows Event Log. Records generated by Weasel can be viewed in the Windows Event Viewer under: `Application and Services Logs → Weasel → Events`. We chose this storage location because the Windows Event Log format is well-known, widely documented, and integrates seamlessly with a broad range of SIEM solutions.
 
-Here’s an example of a Windows Event Log entry for an `ImageLoad` event produced by Weasel. This event illustrates heavily enriched telemetry: it records not just that a DLL or executable was loaded, but also cryptographic hashes (MD5, SHA1, SHA256), image metadata, process and thread IDs, parent command line, and certificate validation info. This depth of detail helps security teams understand both what was loaded and the surrounding context, making each event far more actionable than raw logs alone.
+Here’s an example of a Windows Event Log entry for an `ImageLoad` record produced by Weasel. This record illustrates heavily enriched telemetry: it records not just that a DLL or executable was loaded, but also cryptographic hashes (MD5, SHA1, SHA256), image metadata, process and thread IDs, parent command line, and certificate validation info. This depth of detail helps security teams understand both what was loaded and the surrounding context, making each record far more actionable than raw logs alone.
 
 ```xml
 - <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
@@ -73,9 +77,9 @@ Here’s an example of a Windows Event Log entry for an `ImageLoad` event produc
   </EventData>
   </Event>
 ```
-In order to manage the collection of records efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named `weasel_filter.config`, which must reside in the same directory as the Weasel executable.
+In order to manage the collection of records efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an record should be logged. These rules are defined in a configuration file named `weasel_filter.config`, which must reside in the same directory as the Weasel executable.
 
-The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. This layered filtering design ensures that only relevant and context-aware records make it into the pipeline, reducing noise while giving engineers fine-grained control over what matters in their environment. For example:
+The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific record type and record field, Weasel uses the meta section with two custom fields: `event` and `field`. This enables precise, context-aware filtering tailored to the record structure. This layered filtering design ensures that only relevant and context-aware records make it into the pipeline, reducing noise while giving engineers fine-grained control over what matters in their environment. For example:
 ```yml
 rule openprocess_taskmgr {
     meta:
@@ -104,4 +108,8 @@ rule ExcludeSpecificCommandLine {
 
 > Disclaimer: YARA has proven suitable for our use case, but its performance heavily depends on how rules are designed. In particular, using complex constructs like regular expressions can significantly degrade performance, so careful rule design is essential.
 
+### How to Collaborate
+To participate in Weasel’s alpha program, you first need to register via a simple form (**XXXX**). Upon registration, you will gain access to a dedicated Discord channel and a GitHub repository where collaboration takes place. Early collaborators can run the sensor in their environment, provide feedback, report issues, and discuss improvements with the team. Your input helps refine features, validate new capabilities, and ensure that Weasel meets real-world needs before broader release.
 
+### Next Steps
+After the current focus on the record pipeline, the next feature will introduce a schema-based collection approach. This will give Weasel the ability to dynamically configure what data is collected, moving beyond preselected sets and enabling more flexible and adaptable data gathering. While still in development, this upcoming capability offers a glimpse of the enhancements planned after the current alpha testing phase.
