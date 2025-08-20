@@ -66,15 +66,14 @@ const tags = e.tags.concat(example.tags).map(tagText =>
                   <h4 class="px-2 mb-1 mt-4">${example.name}</h4>
                   <div class="px-2 mb-2">${example.description}</div>
                   <h5>${tags.join(' ')}</h5>
+
+                  <!-- Button inside the card -->
+                  ${example.registerLink ? `
+                  <a href="${example.registerLink}" target="_blank" 
+                     class="btn btn-primary btn-sm mt-3" style="display: inline-block;">
+                      Register
+                  </a>` : ''}
                 </div>
-                <!-- Conditional button -->
-                ${example.register ? `
-                  <div class="px-2 mt-3">
-                      <a href="${example.register}" target="_blank" class="btn btn-primary btn-sm">
-                          Register
-                      </a>
-                  </div>` : ''}
-              </div>
             </a>
           </div>
         `
