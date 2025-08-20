@@ -26,6 +26,7 @@
           "name": "Weasel Alpha",
           "description": "Weasel is a powerful and extensible high-speed Windows logging and threat-detection framework designed for threat hunters seeking in-depth records of process behavior enriched with contextual information, built-in detection of advanced malware techniques, and low performance overhead. In order to contribute, you first need to register via the form. After registration, you’ll gain access to the dedicated GitHub repository and Discord channel where collaboration takes place [Form](https://test.de).",
           "link": "https://github.com/threathunters-io/WillyWeasel-Beta",
+          "register": "https://test.com/",
           "tags": [
             "etw"
           ]
