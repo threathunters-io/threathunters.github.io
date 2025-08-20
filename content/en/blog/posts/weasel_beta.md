@@ -1,7 +1,7 @@
 ---
 date: 2025-08-20
 draft: false
-title: WEASEL Beta: Shaping a Sensor Built with and for Security Engineers
+title: "WEASEL Beta: Shaping a Sensor Built with and for Security Engineers"
 categories: [posts]
 tags: [post, blog]
 
