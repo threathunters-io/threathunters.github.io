@@ -15,7 +15,7 @@ Weasel can be started either as a command-line tool or as a Windows service, giv
 
 Here’s an example of a Windows Event Log entry for an ImageLoad event produced by Weasel:
 
-```json
+```c++
 - <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
 - <System>
   <Provider Name="Weasel" Guid="{aaaaaaaa-bbbb-cccc-dddd-deadbeefcafe}" /> 
@@ -71,18 +71,10 @@ Here’s an example of a Windows Event Log entry for an ImageLoad event produced
   </EventData>
   </Event>
 ```
-
-Weasel can be started either as a command-line tool or as a Windows service, giving engineers flexibility depending on their environment and operational requirements. Once running, it collects security-relevant system events and writes them directly into the Windows Event Log. We chose this storage location for two reasons:
-
-The Windows Event Log format is well-known and widely documented.
-
-It already integrates seamlessly with a broad range of SIEM solutions, making it easy to feed Weasel’s output into existing detection and monitoring pipelines without custom connectors or parsers.
-
 In order to manage the collection of events efficiently, Weasel applies multiple layers of filtering. One of the most important of these is the YARA-based filter. Weasel internally leverages YARA rules to determine whether an event should be logged. These rules are defined in a configuration file named weasel_filter.config, which must reside in the same directory as the Weasel executable.
 
 The filter adheres to the standard YARA specification, meaning all YARA functions are supported when writing filter rules. To bind a rule to a specific event type and event field, Weasel uses the meta section with two custom fields: event and field. This enables precise, context-aware filtering tailored to the event structure. For example:
-
-```json
+```yara
 rule openprocess_taskmgr {
     meta:
       description = "meant to find openprocess() from taskmgr to explorer"
@@ -94,7 +86,8 @@ rule openprocess_taskmgr {
         any of them
 }
 ```
-```json
+
+```yara
 rule ExcludeSpecificCommandLine {
     meta:
       description = "excludes uninteresting processes"
